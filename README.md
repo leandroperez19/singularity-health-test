@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+# Front-end Developer Singularity Health Prueba
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Leandro Perez
 
-Currently, two official plugins are available:
+## Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Esta es una prueba para el puesto el front end developer en Singularity Health, se trata principalmente de una Landing Page, con Inicio de Sesión, y pagina 404, la primera pagina al cargar es el login, sin embargo puedes acceder a la landing por la route /home, al iniciar sesión podrás acceder a la landing desde la ruta principal / ademas de agregarse un botón de cerrar sesión en el navbar.
 
-## Expanding the ESLint configuration
+## Instalación y ejecución
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clona el repo: git clone `https://github.com/leandroperez19/singularity-health-test`
+2. Navega hacia el directorio: cd `singularity-health-test`
+3. Instala las dependencias: `npm install`
+4. Ejecuta `npm run dev` para correr el proyecto
 
-- Configure the top-level `parserOptions` property like this:
+## Instalación y ejecución (Docker)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Abre docker desktop en tu equipo
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Para desarrollo con live reload.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Corre: `npm run docker:build-dev`
+2. Corre: `npm run docker:run-dev`
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Para ver el preview de la pagina en "producción"
+
+1. Corre: `npm run docker:build-prod`
+2. Corre: `npm run docker:run-prod`
+
+## Dependencias
+
+1. I18Next: Para internacionalización
+2. TailwindCss: Para estilos en clases
+3. Styled-components: Para estilos mas complejos y manejo de temas
+4. React-query: Para request, caching de las mismas y mejor manejo de sus estados
+5. Cypress: Para prueba de componentes y e2e
+6. React-icons: Iconos
+7. Toastify: Alertas con información relevante de manera atractiva visualmente
+8. Swiper: Para componentes de carrusel.
+9. React-hook-form: Para validación y manejo de campos de texto
+10. Zod: Complemento para react-hook-form en la validación de objetos

@@ -6,7 +6,7 @@ import Button from "@/components/button/button";
 import { IoMenu, MdOutlineLogout } from "@/assets/icons";
 import { useScreen } from "@/hooks/useScreen";
 import { sections } from "../../sections";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import useLayout from "@/hooks/useLayout";
 import useNavbar from "./navbar.hooks";
@@ -42,12 +42,16 @@ const Navbar: FC = () => {
     const { isMobile } = useScreen(1024);
     const { sidebarToggle } = useLayout();
     const { nav } = useNavbar();
+    const navigate = useNavigate();
 
     return (
         <NavbarWrapper ref={nav}>
             <div className="content">
                 <div className="left">
-                    <div className="logo-container">
+                    <div
+                        className="logo-container"
+                        onClick={() => navigate("/")}
+                    >
                         <Image alt="logo" src={logo} />
                     </div>
                 </div>
