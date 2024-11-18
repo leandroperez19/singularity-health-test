@@ -8,7 +8,11 @@
         "build": "tsc -b && vite build",
         "lint": "eslint .",
         "preview": "vite preview",
-        "dev-exposed": "vite --host"
+        "dev-exposed": "vite --host",
+        "docker:build-dev": "docker build -t singularity-health:dev -f Dockerfile --target dev .",
+        "docker:run-dev": "docker-compose up",
+        "docker:build-prod": "npm run build && docker build -t singularity-health:prod -f Dockerfile --target prod .",
+        "docker:run-prod": "docker run -p 8080:8080 singularity-health:prod"
     },
     "dependencies": {
         "@hookform/resolvers": "^3.9.1",
@@ -44,6 +48,7 @@
         "tailwindcss": "^3.4.14",
         "typescript": "~5.6.2",
         "typescript-eslint": "^8.11.0",
-        "vite": "^5.4.10"
+        "vite": "^5.4.10",
+        "vitest": "^2.1.5"
     }
 }

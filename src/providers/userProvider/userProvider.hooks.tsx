@@ -5,8 +5,11 @@ export const useUserHooks = () => {
     const [userLoading, setUserLoading] = useState(true);
 
     useEffect(() => {
+        const foundUserToken = localStorage.getItem("singularity_user");
+
         setTimeout(() => {
             setUserLoading(false);
+            if (foundUserToken) setUser(true);
         }, 1000);
     }, []);
 
