@@ -7,7 +7,7 @@ export const NotFoundWrapper = styled.div`
     background-color: #ff6752;
     width: 100dvw;
     height: 100dvh;
-    background-image: url("/src/assets/static/card-bg.jpg");
+    background-image: url("/static/card-bg.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-blend-mode: color-burn;
